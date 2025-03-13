@@ -5,7 +5,7 @@ A set of utilities for safely defining mixpanel events
 ### Example
 
 ```ts
-import { defineMpEvents, createTrackEvent } from "@yet3/type-safe-mixpanel";
+import { defineMpEvents, createTrackEvent, mpinf, mperr, mpwarn } from "@yet3/type-safe-mixpanel";
 
 export const MP = defineMpEvents({
   APP_MOUNT: mpinf("App has mounted"),
