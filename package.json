@@ -1,0 +1,17 @@
+{
+  "name": "@yet3/type-safe-mixpanel",
+  "version": "1.0.0",
+  "description": "A set of utilities for defining type-safe mixpanel events",
+  "main": "./src/index.ts",
+  "scripts": {},
+  "keywords": [],
+  "author": "yet3",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mixpanel-browser": "^2.51.0",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "mixpanel-browser": "2.x"
+  }
+}
