@@ -66,7 +66,7 @@ export enum MixpanelEventType {
   error = "error",
 }
 
-export const createTrackEvent = ({ baseProps }: ICreateTrackEvent = {}) => {
+export const createTrackEvent = ({ baseProps, postDetails }: ICreateTrackEvent = {}) => {
   const trackEvent: IAnaltyicTrackFn = (event, ...details) => {
     const { eventName, eventType, opts } = event;
 
@@ -87,11 +87,17 @@ export const createTrackEvent = ({ baseProps }: ICreateTrackEvent = {}) => {
       props = baseProps({ event, details: eventDetails });
     }
 
+    let postDetailsProps = {};
+    if (typeof postDetails === "function") {
+      postDetailsProps = postDetails({ event, details: eventDetails });
+    }
+
     props = {
       ...props,
       EVENT_TYPE: eventType,
       EVENT_DETAILS: {
         ...eventDetails,
+        ...postDetailsProps,
       },
     };
 

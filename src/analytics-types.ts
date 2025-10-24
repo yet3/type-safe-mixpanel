@@ -25,6 +25,7 @@ export interface IMpEvents {
 export interface ICreateTrackEvent {
   // biome-ignore lint/suspicious/noExplicitAny:
   baseProps?: (ctx: { event: IMpEvent<unknown>, details: Record<string, any> }) => Record<string, unknown>;
+  postDetails?: (ctx: { event: IMpEvent<unknown>, details: Record<string, any> }) => Record<string, unknown>;
 }
 
 export type IAnaltyicTrackFn = <TEvent extends IMpEvent<unknown>>(
