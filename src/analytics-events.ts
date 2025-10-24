@@ -84,7 +84,7 @@ export const createTrackEvent = ({ baseProps }: ICreateTrackEvent = {}) => {
 
     let props = {};
     if (typeof baseProps === "function") {
-      props = baseProps({ event });
+      props = baseProps({ event, details: eventDetails });
     }
 
     props = {
